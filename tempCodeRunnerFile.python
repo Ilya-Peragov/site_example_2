@@ -1,0 +1,21 @@
+def f():
+    na = int(input())
+    a = [0]*na
+    for i in range(na):
+        a[i] = int(input())
+    nb = 0
+    b = [0]*nb
+    kol = [0]*nb
+    for i in range(na): 
+        j = 1
+        while a[i] != b[j] and j <= nb:
+            j += 1
+        if j > nb:
+            nb += 1
+            b[nb] = a[i]
+            kol[nb] = 1
+        else:
+            kol[j] = kol[j] + 1
+    print(b[1:nb], kol[1:nb])
+    
+f()
